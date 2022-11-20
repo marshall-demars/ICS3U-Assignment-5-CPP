@@ -2,41 +2,42 @@
 
 // Created by: Marshall Demars
 // Created on: Nov 2022
-// This program sees if you guess the right number using while true
+// This program calculates factorials
 
 #include <iostream>
-#include <random>
-#include <string>
 
 int main() {
-    // This program sees if you guess the right number using while true
-    int guessAsInt;
-    int randomNumber;
-    std::string guessAsString;
+    // This program calculates factorials
 
-    while (true) {
-        std::random_device rseed;
-        std::mt19937 rgen(rseed());
-        std::uniform_int_distribution<int> idist(0, 9);
-        randomNumber = idist(rgen);
+    int integerAsInt;
+    int counter = 1;
+    int factorialProduct = 1;
+    std::string integerAsString;
 
-        // Input
-        std::cout << "\nEnter the number between 0-9: ";
-        std::cin >> guessAsString;
-        std::cout << std::endl;
+    // Input
+    std::cout << "Enter a positive number: ";
+    std::cin >> integerAsString;
+    std::cout << "" << std::endl;
 
-        // Process and Output
-        try {
-            guessAsInt = std::stoi(guessAsString);
-            if (guessAsInt == randomNumber) {
-                std::cout << "\nYou guessed right." << std::endl;
-                break;
-            } else {
-                std::cout << "\nYou guessed wrong, try again." << std::endl;
-            }
-        } catch (std::invalid_argument) {
-            std::cout << "\nPlease enter a valid number." << std::endl;
+    // Process and Output
+    try {
+        integerAsInt = std::stoi(integerAsString);
+
+        if (integerAsInt < 0) {
+            std::cout << "Please enter a positive number." << std::endl;
+        } else {
+            (integerAsInt > 0);
+            do {
+                factorialProduct = factorialProduct * counter;
+                counter = counter + 1;
+            } while (counter <= integerAsInt);
+            std::cout << "The product of all positive numbers from 1 to "
+                      << integerAsString << " is "
+                      << factorialProduct << "." << std::endl;
         }
+    } catch (std::invalid_argument) {
+        std::cout << "That was not a valid input." << std::endl;
     }
-    std::cout << "\nDone.";
+
+    std::cout << ("\nDone.") << std::endl;
 }
