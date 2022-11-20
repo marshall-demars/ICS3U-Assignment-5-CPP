@@ -31,10 +31,10 @@ int main() {
             std::cout << "\n"
                       << inputAsString << " x " << counter << " = "
                       << product << "." << std::endl;
+            }
+        } catch (std::invalid_argument) {
+            std::cout << "Invalid input." << std::endl;
         }
-    } catch (std::invalid_argument) {
-        std::cout << "Invalid input." << std::endl;
-    }
 
     std::cout << ("\nDone.") << std::endl;
 }
