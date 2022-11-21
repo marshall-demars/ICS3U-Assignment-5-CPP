@@ -25,16 +25,17 @@ int main() {
         if (inputAsInt < 0) {
             std::cout << "\nPlease enter a positive number." << std::endl;
         } else {
-            } while (counter < TABLE_END); {
+            while (counter < TABLE_END) {
             counter = counter + 1;
             product = inputAsInt * counter;
             std::cout << "\n"
                       << inputAsString << " x " << counter << " = "
                       << product << "." << std::endl;
             }
-        } catch (std::invalid_argument) {
-            std::cout << "Invalid input." << std::endl;
         }
+    } catch (std::invalid_argument) {
+        std::cout << "Invalid input." << std::endl;
+    }
 
     std::cout << ("\nDone.") << std::endl;
 }
